@@ -1,0 +1,30 @@
+server:
+  port: ${SERVLET_PORT}
+
+bot:
+  username: ${BOT_USERNAME}
+  token: ${BOT_TOKEN}
+  path: "https://${SERVER_HOST}:${SERVER_PORT}/${BOT_TOKEN}"
+  dropUpdates: false
+
+logging:
+  level:
+    root: INFO
+
+spring:
+  profiles:
+    active: dev
+
+  config:
+    import: optional:file:.env[.properties]
+
+  datasource:
+    url: "jdbc:h2:file:/db/d2news"
+    username: ${H2_USERNAME}
+    password: ${H2_PASSWORD}
+    driverClassName: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create

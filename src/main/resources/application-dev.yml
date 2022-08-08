@@ -1,0 +1,13 @@
+bot:
+  path: "/${bot.token}"
+  dropUpdates: true
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: "jdbc:h2:mem:d2news"
+    username: sa
+    password:
